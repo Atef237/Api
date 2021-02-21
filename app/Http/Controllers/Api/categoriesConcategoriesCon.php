@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class categoriesConcategoriesCon extends Controller
 {
     public function index(){
-            $categorie = categorie::get();
+            $categorie = categorie::select('id','name_'.app() -> getLocale() )->get();
             return response()->json($categorie);
     }
 }

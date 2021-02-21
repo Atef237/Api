@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-route::group(['middleware' => ['api','checkpassword'] ,'namespace' => 'Api'],function(){
+route::group(['middleware' => ['api','checkpassword','ChangeLanguage'] ,'namespace' => 'Api'],function(){
 
     route::post('get-main-categories','categoriesConcategoriesCon@index');  //get all data from table categories
 
