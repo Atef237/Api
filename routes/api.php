@@ -17,6 +17,21 @@ use Illuminate\Support\Facades\Route;
 
 route::group(['middleware' => ['api','checkpassword','ChangeLanguage'] ,'namespace' => 'Api'],function(){
 
-    route::post('get-main-categories','categoriesConcategoriesCon@index');  //get all data from table categories
+    route::get('get-main-categories','categoriesConcategoriesCon@index');  //get all data from table categories
+
+    route::post('get-name-byId','categoriesConcategoriesCon@nameByID');  //get data from table api by id
+
+    route::post('shangStatus','categoriesConcategoriesCon@shangStatus');  //get data from table api by id
+
+    route::group(['prefix'=>'admin','namespace' => 'Admin'],function() {
+        route::post('login', 'authCon@login');
+    });
+});
+
+
+
+route::group(['middleware' => ['api','checkpassword','ChangeLanguage','CheckAdminToken:admin-api'] ,'namespace' => 'Api'],function() {
+
+    route::get('caregories','categoriesConcategoriesCon@caregories');  //get all data from table categories
 
 });

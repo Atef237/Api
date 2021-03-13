@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
 
         'checkpassword' => \App\Http\Middleware\Checkpassword::class,
         'ChangeLanguage'  => \App\Http\Middleware\ChangeLanguage::class,
+        'CheckAdminToken'  => \App\Http\Middleware\CheckAdminToken::class,
     ];
 }

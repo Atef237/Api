@@ -17,9 +17,11 @@ class ChangeLanguage
     {
 
         app()->setLocale('ar');
+
         if(isset($request->lang) && $request -> lang == 'en') //If the app language is English put "en" then set the language to "ar" by default
             app()->setLocale('en');
-        
+
         return $next($request);
     }
+
 }
